@@ -4,20 +4,16 @@
 */
 const botaoSubtrair = document.getElementById("subtrair")
 const botaoMultiplicar = document.getElementById("multiplicar")
+const botaoSomar = document.getElementById("somar")
+const botaoDividir = document.getElementById("dividir")
 
 function somar() {
     const numero1 = parseFloat(document.querySelector("#numero1Soma").value)
     const numero2 = parseFloat(document.querySelector("#numero2Soma").value)
 
-    const total = numero1 + numero2
+    const resultado = numero1 + numero2 
 
-    document.querySelector(".resultado").setAttribute('id', 'resultadoSoma')
-    
-
-    const paragrafo = document.getElementById("resultadoSoma")
-    const resultado = document.createElement("strong")
-    paragrafo.appendChild(resultado)
-    resultado.innerText = total
+    document.getElementById("resultadoSoma").innerHTML = resultado
 
 }
 
@@ -49,18 +45,14 @@ function dividir() {
     const numero1 = parseFloat(document.querySelector("#numero1Div").value)
     const numero2 = parseFloat(document.querySelector("#numero2Div").value)
 
-    const total = numero1 / numero2
+    const resultado = numero1 / numero2
 
-    document.querySelector("#resultadoDiv").setAttribute('id', 'resultadoDiv')
-    
-
-    const paragrafo = document.getElementById("resultadoDiv")
-    const resultado = document.createElement("strong")
-    paragrafo.appendChild(resultado)
-    resultado.innerText = total
+    document.getElementById("resultadoDiv").innerHTML = resultado
 
 
 }
 
 botaoSubtrair.addEventListener('click', subtrair)
 botaoMultiplicar.addEventListener('click', multiplicar)
+botaoSomar.addEventListener('click', somar)
+botaoDividir.addEventListener('click', dividir)
